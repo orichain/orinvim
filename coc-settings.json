@@ -1,0 +1,10 @@
+{
+"coc.preferences.diagnostic.signOffset": 9999999,
+  "languageserver": {
+    "terraform": {
+      "command": "terraform-lsp",
+      "filetypes": ["terraform"],
+      "initializationOptions": {}
+    }
+  }
+}
