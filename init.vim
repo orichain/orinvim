@@ -300,6 +300,8 @@ let g:minimap_highlight_range = 1
 " ------ Mouse settings ----------------------------------------------------------
 " Enable mouse (used together with the remap option to disable drag mouse visual mode
 set mouse=nv
+set mousemodel=popup
+set clipboard+=unnamedplus
 "set guicursor=i-ci-v:ver20-nCursor
 "set mouseshape=a:ver20-nCursor
 "set mouseshape=nvir:beam,vs:lrsizing,vd:lrsizing,sd:udsizing,o:question,m:question
@@ -327,7 +329,7 @@ let g:neovide_cursor_trail_length=0
 " Paste by Shift+Insert in the Insert mode
 imap <S-Insert> <C-R>*
 " Mouse right-click in visual mode selection copies the text to system clipboard
-vmap <RightMouse> "+y 
+"vmap <RightMouse> "+y 
 " What is this?:
 "vmap <RightMouse> "*ygv
 
