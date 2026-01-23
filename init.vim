@@ -91,8 +91,9 @@ tnoremap <C-h> <C-\><C-n><C-w>h
 tnoremap <C-j> <C-\><C-n><C-w>j
 tnoremap <C-k> <C-\><C-n><C-w>k
 tnoremap <C-l> <C-\><C-n><C-w>l
-tnoremap <C-c> <C-\><C-n><C-w>k
-tnoremap <F7> <C-\><C-n><C-w>k
+" --- (F7 / ctrl+c) Close Terminal
+tnoremap <C-c> <C-\><C-n><C-w>l
+tnoremap <F7> <C-\><C-n><C-w>l
 " --- 5.a. Memetakan Shift + Arrow Untuk Selection Text
 set keymodel=startsel,stopsel
 set selection=inclusive
