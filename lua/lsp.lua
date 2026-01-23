@@ -24,14 +24,6 @@ vim.diagnostic.config({
 -- },
 })
 
--- Change diagnostic symbols in the sign column (left gutter)
--- DEPRECATED! (commented)
--- local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
--- for type, icon in pairs(signs) do
---   local hl = "DiagnosticSign" .. type
---   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
--- end
-
  -- Python 
  vim.lsp.config['pyright']={
      cmd = { 'pyright' },
@@ -91,27 +83,6 @@ vim.lsp.config['clangd'] = {
     filetypes = { "c", "cpp", "objc", "objcpp" },
     root_dir = vim.fs.dirname(vim.fs.find({'.git', 'Makefile', 'compile_commands.json'}, { upward = true })[1]),
 }
-
--- -- C++ 
--- vim.lsp.config{
---     filetypes = { "c", "cpp", "objc", "objcpp" },
---     cmd = { "clangd", "--background-index" },
--- }
-
--- -- Rust 
--- vim.lsp.config{
---     filetypes = { "rust" },
---     settings = {
---         ["rust-analyzer"] = {
---             cargo = {
---                 loadOutDirsFromCheck = true,
---             },
---             procMacro = {
---                 enable = true,
---             },
---         },
---     },
-       -- }
 
 -- Enable LSP configs
 vim.lsp.enable('pyright')
