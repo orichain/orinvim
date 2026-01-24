@@ -31,49 +31,21 @@ set expandtab
 set mouse=nv
 set mousemodel=popup
 set clipboard+=unnamedplus
+set keymodel=startsel,stopsel
 
 " --- 2. FUNCTION KEYS (F1-F12) ---
-map  <silent> <F2> :set list<CR> 
-map  <silent> <F3> :set nolist<CR> 
-imap <silent> <F2> <Esc>:set list<CR>a
-imap <silent> <F3> <Esc>:set nolist<CR>a
-noremap <F5> :.!xmllint --format --recover - 2>/dev/null<CR> 
-noremap <F6> :%s/</\r</g<CR>
 nnoremap <F7> :botright 15split term://ksh<CR>i
 
 " --- 3. MAPPINGS: LEADER (a-z) ---
-noremap <leader>ad :lua require('cmp').setup.buffer { enabled = false }<CR>
 noremap <leader>bc :bd!<CR>
 noremap <leader>bC :%bd!<CR>
-noremap <leader>c "+y
-nnoremap <leader>d "_d
 nnoremap <leader>e :Neotree toggle<CR>
-noremap <leader>f :Telescope find_files<CR>
-noremap <leader>ff :Telescope current_buffer_fuzzy_find<CR>
-noremap <leader>g :Telescope live_grep<CR>
-noremap <leader>m :set mouse=a<CR>
-noremap <leader>md :set mouse=<CR>
-xnoremap <leader>p "_dP
-map     <leader>r :call MISC_GlobalReplace()<cr>
+noremap <leader>p :Lazy<CR>
 noremap <leader>w :w<CR>
 noremap <leader>xq :bd<CR>
 noremap <leader>xQ :confirm qall<CR>
-nnoremap <leader>, :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
-nnoremap <leader>. :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
-map <leader><Right> :vertical resize +10<CR>
-map <leader><Left>  :vertical resize -10<CR>
 
 " --- 4. MAPPINGS: LOCAL LEADER ---
-noremap <LocalLeader>b :Telescope buffers<CR>
-noremap <LocalLeader>g :Telescope live_grep<CR>
-noremap <LocalLeader>ht :Telescope help_tags<CR>
-noremap <LocalLeader>lr :Telescope lsp_references<CR>
-noremap <LocalLeader>gb :Telescope git_branches<CR>
-noremap <LocalLeader>gc :Telescope git_commits<CR>
-noremap <LocalLeader>ph :Telescope neovim-project history<CR>
-noremap <LocalLeader>pd :Telescope neovim-project discover<CR>
-noremap <LocalLeader>p :Telescope neovim-project neovim-project<CR>
-noremap <LocalLeader>pp :Telescope neovim-project neovim-project<CR>
 
 " --- 5. NAVIGATION & TERMINAL ---
 nnoremap <C-h> <C-w>h
@@ -91,30 +63,9 @@ tnoremap <C-h> <C-\><C-n><C-w>h
 tnoremap <C-j> <C-\><C-n><C-w>j
 tnoremap <C-k> <C-\><C-n><C-w>k
 tnoremap <C-l> <C-\><C-n><C-w>l
-" --- (F7 / ctrl+c) Close Terminal
+
 tnoremap <C-c> <C-\><C-n><C-w>l
 tnoremap <F7> <C-\><C-n><C-w>l
-" --- 5.a. Memetakan Shift + Arrow Untuk Selection Text
-set keymodel=startsel,stopsel
-set selection=inclusive
-nnoremap <Esc>[1;2A v<Up>
-nnoremap <Esc>[1;2B v<Down>
-nnoremap <Esc>[1;2D v<Left>
-nnoremap <Esc>[1;2C v<Right>
-vnoremap <Esc>[1;2A <Up>
-vnoremap <Esc>[1;2B <Down>
-vnoremap <Esc>[1;2D <Left>
-vnoremap <Esc>[1;2C <Right>
-inoremap <Esc>[1;2A <Esc>v<Up>
-inoremap <Esc>[1;2B <Esc>v<Down>
-inoremap <Esc>[1;2D <Esc>v<Left>
-inoremap <Esc>[1;2C <Esc>v<Right>
-" --- 5.b. Home & End
-nnoremap <Home> ^
-nnoremap <End>  $
-inoremap <Home> <Esc>^i
-inoremap <End>  <Esc>$a
-" ------------------------------------------------------
 
 " --- 6. MISC & INSERT MODE ---
 nmap gl :!xdg-open <c-r><c-a><CR>
