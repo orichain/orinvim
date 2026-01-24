@@ -40,6 +40,7 @@ nnoremap <F7> :botright 15split term://ksh<CR>i
 noremap <leader>a :AerialToggle! right<CR>
 noremap <leader>bc :bd!<CR>
 noremap <leader>bC :%bd!<CR>
+nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>e :Neotree toggle<CR>
 noremap <leader>p :Lazy<CR>
 noremap <leader>w :w<CR>
