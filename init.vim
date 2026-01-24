@@ -41,6 +41,8 @@ noremap <leader>a :AerialToggle! right<CR>
 noremap <leader>bc :bd!<CR>
 noremap <leader>bC :%bd!<CR>
 nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
+nnoremap [d <cmd>lua vim.diagnostic.goto_prev()<CR>
+nnoremap ]d <cmd>lua vim.diagnostic.goto_next()<CR>
 nnoremap <leader>e :Neotree toggle<CR>
 noremap <leader>p :Lazy<CR>
 noremap <leader>w :w<CR>
