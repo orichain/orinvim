@@ -1,19 +1,35 @@
 return {
-  {
-    'navarasu/onedark.nvim',
+    -- {
+    --  'navarasu/onedark.nvim',
+    --  lazy = false,
+    -- priority = 1000,
+    -- opts = {
+    --     style = 'darker',
+    --     transparent = true,
+    --     term_colors = true,
+    --     ending_tildes = false,
+    --   },
+    --   config = function(_, opts)
+    --     require('onedark').setup(opts)
+    --     vim.cmd([[colorscheme onedark]])
+    --     end,
+    -- },
+    {
+      "rebelot/kanagawa.nvim",
       lazy = false,
       priority = 1000,
       opts = {
-        style = 'darker',
         transparent = true,
-        term_colors = true,
-        ending_tildes = false,
+        theme = "wave", -- wave, dragon, lotus
+          background = {
+            dark = "wave",
+          },
       },
       config = function(_, opts)
-        require('onedark').setup(opts)
-        vim.cmd([[colorscheme onedark]])
+        require("kanagawa").setup(opts)
+        vim.cmd("colorscheme kanagawa")
         end,
-  },
+    },
     {
       "nvim-neo-tree/neo-tree.nvim",
       branch = "v3.x",
