@@ -37,6 +37,7 @@ set keymodel=startsel,stopsel
 nnoremap <F7> :botright 15split term://ksh<CR>i
 
 " --- 3. MAPPINGS: LEADER (a-z) ---
+noremap <leader>a :AerialToggle! right<CR>
 noremap <leader>bc :bd!<CR>
 noremap <leader>bC :%bd!<CR>
 nnoremap <leader>e :Neotree toggle<CR>

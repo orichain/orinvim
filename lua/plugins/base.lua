@@ -40,6 +40,35 @@ return {
       },
     },
     {
+      "stevearc/aerial.nvim",
+      dependencies = {
+        "nvim-treesitter/nvim-treesitter",
+        "nvim-tree/nvim-web-devicons"
+      },
+      opts = {
+        backends = { "lsp" },
+        layout = {
+          min_width = 28,
+          default_direction = "right",
+          placement = "window",
+        },
+        filter_kind = {
+          "Class",
+          "Constructor",
+          "Enum",
+          "Function",
+          "Interface",
+          "Module",
+          "Method",
+          "Struct",
+          "Variable",
+        },
+        show_icons = true,
+        highlight_on_hover = true,
+        link_tree_to_values = true,
+      },
+    },
+    {
       'nvim-lualine/lualine.nvim',
       dependencies = { 'nvim-tree/nvim-web-devicons' },
       opts = {
