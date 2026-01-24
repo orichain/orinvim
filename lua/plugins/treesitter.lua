@@ -9,7 +9,7 @@ return {
       },
   },
     {
-      'nvim-treesitter',
+      'nvim-treesitter/nvim-treesitter',
       opts = {
         ensure_installed = { "c", "lua", "vim", "vimdoc", "html", "markdown" },
         indent = { enable = false },

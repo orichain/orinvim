@@ -83,7 +83,6 @@ au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 au BufNewFile,BufFilePre,BufRead *.md set number relativenumber
 au BufNewFile,BufRead *.md :au TextChanged,TextChangedI <buffer> silent write
 au BufNewFile,BufFilePre,BufRead *.md lua require('cmp').setup.buffer { enabled = false }
-au BufNewFile,BufFilePre,BufRead *.md :TSBufEnable highlight 
 au BufNewFile,BufFilePre,BufRead vagrantfile set filetype=ruby
 
 " Markdown Plugin Vars
