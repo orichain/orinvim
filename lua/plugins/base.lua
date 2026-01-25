@@ -38,11 +38,19 @@ return {
       -- Footer / Description
         dashboard.section.footer.val = {
           "Shortcuts:",
-          "• Space → Leader key",
+          "• Space   → Leader key",
           "• Space e → File explorer",
-        }
-
-      alpha.setup(dashboard.config)
+          "",
+          "--- SSH PROTOCOL ADVICE ---",
+          "Jika akses via SSH, disarankan memakai KiTTY.",
+          "Pastikan Keypad (Home/End) & Function Keys",
+          "sudah disesuaikan dengan Host (Linux/BSD).",
+          "",
+          "For SSH access, KiTTY is highly recommended.",
+          "Ensure Keypad (Home/End) & Function Keys are",
+          "properly mapped to match the Host environment.",
+        } 
+        alpha.setup(dashboard.config)
         end,
     },
     {
