@@ -31,6 +31,9 @@ set shiftwidth=2
 set expandtab
 set mouse=nv
 set mousemodel=popup
+if $SSH_CONNECTION != ''
+  let g:clipboard = 'osc52'
+endif
 set clipboard+=unnamedplus
 set keymodel=startsel,stopsel
 

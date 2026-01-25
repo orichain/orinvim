@@ -14,6 +14,41 @@ return {
         end,
   },
     {
+      "goolord/alpha-nvim",
+      config = function()
+        local alpha = require("alpha")
+        local dashboard = require("alpha.themes.dashboard")
+
+        -- Header: OriNVim
+        dashboard.section.header.val = {
+          [[  ██████╗ ██████╗ ██╗███╗   ██╗██╗   ██╗██╗███╗   ███╗ ]],
+          [[ ██╔═══██╗██╔══██╗██║████╗  ██║██║   ██║██║████╗ ████║ ]],
+          [[ ██║   ██║██████╔╝██║██╔██╗ ██║██║   ██║██║██╔████╔██║ ]],
+          [[ ██║   ██║██╔══██╗██║██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║ ]],
+          [[ ╚██████╔╝██║  ██║██║██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║ ]],
+          [[  ╚═════╝ ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝ ]],
+        }
+
+      -- Buttons (menu)
+        dashboard.section.buttons.val = {
+          dashboard.button("SPC e",   "  Explorer", ":Neotree toggle<CR>"),
+          dashboard.button("SPC xQ",   "  Quit", ":qa<CR>"),
+        }
+
+      -- Footer / Description
+        dashboard.section.footer.val = {
+          "Recommended terminal for SSH:",
+          "WezTerm → https://wezterm.org/installation.html",
+          "",
+          "Shortcuts:",
+          "• Space → Leader key",
+          "• Space e → File explorer",
+        }
+
+      alpha.setup(dashboard.config)
+        end,
+    },
+    {
       'karb94/neoscroll.nvim',
       config = function()
         require('neoscroll').setup({
@@ -37,20 +72,7 @@ return {
           marks = { enable = true },
         },
       },
-    },
-    {
-      "ojroques/vim-oscyank",
-      config = function()
-        vim.api.nvim_create_autocmd("TextYankPost", {
-            pattern = "*",
-            callback = function()
-            if vim.v.event.operator == "y" and vim.v.event.regname == "" then
-            vim.cmd('OSCYankReg "')
-            end
-            end,
-            })
-      end,
-    },
+    }, 
     {
       "nvim-neo-tree/neo-tree.nvim",
       branch = "v3.x",
