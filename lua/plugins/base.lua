@@ -39,6 +39,19 @@ return {
       },
     },
     {
+      "ojroques/vim-oscyank",
+      config = function()
+        vim.api.nvim_create_autocmd("TextYankPost", {
+            pattern = "*",
+            callback = function()
+            if vim.v.event.operator == "y" and vim.v.event.regname == "" then
+            vim.cmd('OSCYankReg "')
+            end
+            end,
+            })
+      end,
+    },
+    {
       "nvim-neo-tree/neo-tree.nvim",
       branch = "v3.x",
       dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons", "MunifTanjim/nui.nvim" },

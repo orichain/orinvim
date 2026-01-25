@@ -4,6 +4,7 @@ let mapleader=" "
 let maplocalleader=","
 lua require("init")
 
+" --- 1. MAIN SETUP ---
 set nocompatible
 set encoding=utf-8 
 set fileformat=unix 
