@@ -37,9 +37,6 @@ return {
 
       -- Footer / Description
         dashboard.section.footer.val = {
-          "Recommended terminal for SSH:",
-          "WezTerm → https://wezterm.org/installation.html",
-          "",
           "Shortcuts:",
           "• Space → Leader key",
           "• Space e → File explorer",
