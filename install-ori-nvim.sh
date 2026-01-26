@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+cp install-ori-nvim.sh ~
+cd ~
+chmod +x install-ori-nvim.sh
 echo "==> Removing old Neovim config..."
 rm -rf ~/.config/nvim \
   ~/.local/share/nvim \
