@@ -50,11 +50,11 @@ elif [ "$DISTRO_ID" = "rocky" ]; then
     sudo mv nvim-linux-x86_64 /usr/local/lib/nvim-dist
     sudo chmod +x /usr/local/lib/nvim-dist
     sudo ln -sf /usr/local/lib/nvim-dist/bin/nvim /usr/local/bin/nvim
+    sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+    sudo dnf install -y https://dl.rockylinux.org/pub/rocky/9/devel/x86_64/os/Packages/p/protobuf-3.14.0-16.el9.x86_64.rpm
+    sudo dnf install -y https://dl.rockylinux.org/pub/rocky/9/devel/x86_64/os/Packages/p/protobuf-compiler-3.14.0-16.el9.x86_64.rpm
     curl -L https://github.com/fcying/compiledb-go/releases/download/v1.5.2/compiledb-linux-amd64.txz -o compiledb.txz
-    tar -xvf compiledb.txz
-    rm compiledb.txz
-    sudo mv compiledb /usr/local/bin
-    sudo chmod +x /usr/local/bin/compiledb
+    sudo dnf -y bear
 else
     echo "Not Automaticly Support For Distro [$DISTRO_ID]."
     exit 1
