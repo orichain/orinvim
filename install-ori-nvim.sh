@@ -29,7 +29,8 @@ echo "==> Installing Neovim config..."
 git clone --depth 1 https://github.com/orichain/orinvim.git ~/.config/nvim
 mkdir -p ~/.local/share/nvim/lazy
 git clone https://github.com/nvim-treesitter/nvim-treesitter.git ~/.local/share/nvim/lazy/nvim-treesitter
-
+echo "==> Syncing plugins (please wait)..."
+nvim --headless "+Lazy! sync" +qa
 echo "==> Done. Launching nvim..."
-nvim
+exec nvim
 
