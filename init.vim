@@ -44,6 +44,7 @@ nnoremap <F9> :botright 15split term://ksh<CR>i
 
 " --- 3. MAPPINGS: LEADER (a-z) ---
 noremap <leader>a :AerialToggle! right<CR>
+noremap <leader>ba :%bd\|e#\|bd#\|Neotree toggle<CR>
 noremap <leader>bc :bd!<CR>
 noremap <leader>bC :%bd!<CR>
 nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
