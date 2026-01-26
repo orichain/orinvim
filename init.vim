@@ -40,7 +40,7 @@ endif
 set keymodel=startsel,stopsel
 
 " --- 2. FUNCTION KEYS (F1-F12) ---
-nnoremap <F7> :botright 15split term://ksh<CR>i
+nnoremap <F9> :botright 15split term://ksh<CR>i
 
 " --- 3. MAPPINGS: LEADER (a-z) ---
 noremap <leader>a :AerialToggle! right<CR>
@@ -75,7 +75,7 @@ tnoremap <C-k> <C-\><C-n><C-w>k
 tnoremap <C-l> <C-\><C-n><C-w>l
 
 tnoremap <C-c> <C-\><C-n><C-w>l
-tnoremap <F7> <C-\><C-n><C-w>l
+tnoremap <F9> <C-\><C-n><C-w>l
 
 " --- 6. MISC & INSERT MODE ---
 nmap gl :!xdg-open <c-r><c-a><CR>
