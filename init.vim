@@ -40,7 +40,8 @@ endif
 set keymodel=startsel,stopsel
 
 " --- 2. FUNCTION KEYS (F1-F12) ---
-nnoremap <F9> :botright 15split term://ksh<CR>i
+let g:my_shell = has('unix') && system('uname') =~ 'OpenBSD' ? 'ksh' : 'bash'
+nnoremap <F9> :execute 'botright 15split term://' . g:my_shell<CR>i
 
 " --- 3. MAPPINGS: LEADER (a-z) ---
 noremap <leader>a :AerialToggle! right<CR>
