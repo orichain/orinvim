@@ -32,7 +32,29 @@ set expandtab
 set mouse=nv
 set mousemodel=popup
 if $SSH_CONNECTION != ''
-  let g:clipboard = 'osc52'
+lua << EOF
+if vim.fn.has('nvim-0.10') == 1 and vim.env.SSH_CONNECTION then
+  local osc52 = require('vim.ui.clipboard.osc52')
+  local function paste_warning()
+    vim.api.nvim_echo({
+      {"[ORINVIM] OSC52 Paste Disabled. ", "WarningMsg"},
+      {"Enter Insert Mode And Do Right Click", "None"}
+    }, true, {})
+    return {}
+  end
+  vim.g.clipboard = {
+    name = 'OSC52',
+    copy = {
+      ['+'] = osc52.copy('+'),
+      ['*'] = osc52.copy('*'),
+    },
+    paste = {
+      ['+'] = paste_warning,
+      ['*'] = paste_warning,
+    },
+  }
+end
+EOF
 endif
 set clipboard+=unnamedplus
 set keymodel=startsel,stopsel
